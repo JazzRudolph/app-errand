@@ -17,7 +17,7 @@ export default function ErrandsForm() {
                 </label>
             </div>
             <button type='submit'>
-                Add
+                Addd
             </button>
         </form>
     );

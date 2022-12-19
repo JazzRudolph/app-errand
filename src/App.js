@@ -1,10 +1,29 @@
 import './App.css';
+import React from 'react';
 import ErrandsForm from './Components/ErrandsForm/ErrandsForm';
 import ErrandsList from './Components/ErrandsList/ErrandsList';
 import Time from './Components/Time/Time';
 import Date from './Components/Date/Date'
 
 export default function App() {
+
+  const [errandsItems, setErrandsItems] = React.useState([
+    {
+      NameOfErrands: 'Make Dinner',
+      Duration: '1hr 30min',
+      id: 1
+    },
+    {
+      NameOfErrands: 'Wash The Dog',
+      Duration: '45min',
+      id: 2
+    },
+    {
+      NameOfErrands: 'Do Laundry',
+      Duration: '1hr',
+      id: 3
+    }
+  ]);
   return (
     <div className="App">
       <header className="App-header">
@@ -13,7 +32,7 @@ export default function App() {
       </header>
       <main className='App-main'>
         <ErrandsForm />
-        <ErrandsList />
+        <ErrandsList errandsItems={errandsItems} />
       </main>
     </div>
   );

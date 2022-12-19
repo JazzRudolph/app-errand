@@ -1,6 +1,16 @@
 import React from "react";
 
-export default function ErrandsList() {
+export default function ErrandsList(props) {
+    const errandsItems = props.errandsItems;
+    const tableRows = errandsItems.map(item =>
+        <tr key={item.id}>
+            <td>{item.NameOfErrands}</td>
+            <td>{item.Duration}</td>
+            <td><button>DELETE</button></td>
+        </tr>
+    )
+
+
     return (
         <table>
             <thead>
@@ -12,36 +22,7 @@ export default function ErrandsList() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Grocery Shopping</td>
-                    <td>1 hour</td>
-                    <td>
-                        <button>!</button>
-                    </td>
-                    <td>
-                        <button>Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Walk the dog</td>
-                    <td>20 minutes</td>
-                    <td>
-                        <button>!</button>
-                    </td>
-                    <td>
-                        <button>Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Do laundry</td>
-                    <td>1 hour 30 minutes</td>
-                    <td>
-                        <button>!</button>
-                    </td>
-                    <td>
-                        <button>Delete</button>
-                    </td>
-                </tr>
+                {tableRows}
             </tbody>
         </table>
     )

@@ -1,4 +1,5 @@
 import './App.css';
+import ErrandsForm from './Components/ErrandsForm/ErrandsForm';
 import ErrandsList from './Components/ErrandsList/ErrandsList';
 
 export default function App() {
@@ -8,7 +9,7 @@ export default function App() {
         <h1>Errand App</h1>
       </header>
       <main className='App-main'>
-        <section>Errand Form</section>
+        <ErrandsForm />
         <ErrandsList />
       </main>
     </div>

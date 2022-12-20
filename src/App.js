@@ -20,7 +20,7 @@ export default function App() {
     },
     {
       NameOfErrands: 'Do Laundry',
-      Duration: '1hr',
+      Duration: '1hr/ 1:41:27',
       id: 3
     }
   ]);

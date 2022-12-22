@@ -12,6 +12,9 @@ export default function ErrandsForm() {
         const durationValue = durationInput.current.value;
 
         console.log(errandsValue, durationValue);
+
+        errandsInput.current.value = '';
+        durationInput.current.value = '';
     }
 
 
@@ -38,7 +41,7 @@ export default function ErrandsForm() {
                 </label>
             </div>
             <button type='submit'>
-                Add
+                Add 
             </button>
         </form>
     );

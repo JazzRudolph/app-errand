@@ -3,7 +3,8 @@ import React from 'react';
 import ErrandsForm from './Components/ErrandsForm/ErrandsForm';
 import ErrandsList from './Components/ErrandsList/ErrandsList';
 import Time from './Components/Time/Time';
-import Date from './Components/Date/Date'
+import Date from './Components/Date/Date';
+
 
 export default function App() {
 

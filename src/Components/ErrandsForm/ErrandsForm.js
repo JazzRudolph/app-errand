@@ -1,20 +1,29 @@
 import React from "react";
+import './ErrandsForm.css';
 
 export default function ErrandsForm() {
+    const [errorMessage, setErrorMessage] = React.useState('');
     const errandsInput = React.useRef();
     const durationInput = React.useRef();
+
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const errandsValue = errandsInput.current.value;
-        const durationValue = durationInput.current.value;
+        const errandsValue = errandsInput.current.value.trim();
+        const durationValue = durationInput.current.value.trim();
 
-        console.log(errandsValue, durationValue);
+        if (errandsValue.length > 0 && durationValue.length > 0) {
+            setErrorMessage('');
+            console.log(errandsValue, durationValue);
 
-        errandsInput.current.value = '';
-        durationInput.current.value = '';
+            errandsInput.current.value = '';
+            durationInput.current.value = '';
+        } else {
+            setErrorMessage('Please Fill in Blanks!');
+        }
+
     }
 
 
@@ -43,6 +52,7 @@ export default function ErrandsForm() {
             <button type='submit'>
                 Add 
             </button>
+            <p className= "error-message">{errorMessage}</p>
         </form>
     );
 }

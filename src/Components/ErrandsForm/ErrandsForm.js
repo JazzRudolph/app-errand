@@ -1,7 +1,7 @@
 import React from "react";
 import './ErrandsForm.css';
 
-export default function ErrandsForm() {
+export default function ErrandsForm(props) {
     const [errorMessage, setErrorMessage] = React.useState('');
     const errandsInput = React.useRef();
     const durationInput = React.useRef();
@@ -17,6 +17,10 @@ export default function ErrandsForm() {
         if (errandsValue.length > 0 && durationValue.length > 0) {
             setErrorMessage('');
             console.log(errandsValue, durationValue);
+            props.addItem({
+                NameOfErrands: errandsValue,
+                Duration: durationValue
+            })
 
             errandsInput.current.value = '';
             durationInput.current.value = '';
@@ -50,7 +54,7 @@ export default function ErrandsForm() {
                 </label>
             </div>
             <button type='submit'>
-                Add 
+                Add
             </button>
             <p className= "error-message">{errorMessage}</p>
         </form>

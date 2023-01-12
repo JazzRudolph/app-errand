@@ -42,6 +42,17 @@ export default function App() {
   }
 
 
+  const deleteItem = (itemId) => {
+    setErrandsItems(oldErrandsItems => {
+      const { errandsList, nextId } = oldErrandsItems;
+      const newErrandsList = errandsList.filter(item => item.id !== itemId);
+      return {
+        errandsList: newErrandsList, nextId
+      }
+    });
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -50,7 +61,7 @@ export default function App() {
       </header>
       <main className='App-main'>
         <ErrandsForm addItem={addItem} />
-        <ErrandsList errandsItems={errandsItems.errandsList} />
+        <ErrandsList errandsItems={errandsItems.errandsList} deleteItem={deleteItem} />
       </main>
     </div>
   );

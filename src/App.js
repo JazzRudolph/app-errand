@@ -13,16 +13,19 @@ export default function App() {
       {
         NameOfErrands: 'Make Dinner',
         Duration: '1hr 30min',
+        isCompleted: false,
         id: -2
       },
       {
         NameOfErrands: 'Wash The Dog',
         Duration: '45min',
+        isCompleted: false,
         id: -1
       },
       {
         NameOfErrands: 'Do Laundry',
         Duration: '1hr',
+        isCompleted: false,
         id: 0
       }
     ],
@@ -35,7 +38,8 @@ export default function App() {
       const newState = {};
       newState.nextId = oldState.nextId + 1;
       newState.errandsList = [...oldState.errandsList];
-      newItem.id = oldState.nextId.id;
+      newItem.id = oldState.nextId;
+      newItem.isCompleted = false;
       newState.errandsList.push(newItem);
       return newState;
     });
@@ -47,7 +51,25 @@ export default function App() {
       const { errandsList, nextId } = oldErrandsItems;
       const newErrandsList = errandsList.filter(item => item.id !== itemId);
       return {
-        errandsList: newErrandsList, nextId
+        errandsList: newErrandsList,
+        nextId
+      }
+    });
+  }
+
+  const toggleItem = (itemId) => {
+    setErrandsItems(oldErrandsItems => {
+      const { errandsList, nextId } = oldErrandsItems;
+      const newErrandsList = errandsList.map(item => {
+        item = {...item}
+        if (item.id === itemId) {
+          item.isCompleted = !item.isCompleted;
+        }
+        return item;
+      });
+        return {
+        errandsList: newErrandsList,
+        nextId
       }
     });
   }
@@ -61,7 +83,11 @@ export default function App() {
       </header>
       <main className='App-main'>
         <ErrandsForm addItem={addItem} />
-        <ErrandsList errandsItems={errandsItems.errandsList} deleteItem={deleteItem} />
+        <ErrandsList
+          errandsItems={errandsItems.errandsList}
+          deleteItem={deleteItem}
+          toggleItem={toggleItem}
+        />
       </main>
     </div>
   );

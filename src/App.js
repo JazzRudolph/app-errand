@@ -14,23 +14,46 @@ export default function App() {
         NameOfErrands: 'Make Dinner',
         Duration: '1hr 30min',
         isCompleted: false,
-        id: -2
+        id: 1
       },
       {
         NameOfErrands: 'Wash The Dog',
         Duration: '45min',
         isCompleted: false,
-        id: -1
+        id: 2
       },
       {
         NameOfErrands: 'Do Laundry',
         Duration: '1hr',
         isCompleted: false,
-        id: 0
+        id: 3
       }
     ],
-    nextId: 1
+    nextId: 4
   });
+
+  function findItemIndexById(items, itemId) {
+    return items.findIndex(errand => String(errand.id) === String(itemId));
+  }
+
+  const moveItem = (itemId, isUp) => {
+    const newErrandsItems = [...errandsItems.errandsList];
+    const nextId = errandsItems.nextId;
+    const itemIndex = findItemIndexById(newErrandsItems, itemId);
+    const otherIndex = isUp ? itemIndex - 1 : itemIndex + 1;
+    if (itemIndex === -1 || isUp ? itemIndex <= 0 : itemIndex >= newErrandsItems.length - 1) {
+      return;
+    }
+    let swap = newErrandsItems[itemIndex];
+    newErrandsItems[itemIndex] = newErrandsItems[otherIndex];
+    newErrandsItems[otherIndex] = swap;
+
+    setErrandsItems({
+      nextId,
+      errandsList: newErrandsItems 
+    });
+
+  }
 
 
   const addItem = (newItem) => {

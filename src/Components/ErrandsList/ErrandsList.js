@@ -31,7 +31,7 @@ export default function ErrandsList(props) {
                 <button onClick={() => toggleButtonClicked(item.id)}>
                     {item.isCompleted ? "Clear" : "Complete"}  
                 </button> 
-                <button onClick={() => moveButtonClicked(item.id, false)}>
+                <button onClick={() => moveButtonClicked(item.id, true)}>
                     UP
                 </button>
                 <button onClick={() => moveButtonClicked(item.id, false)}>

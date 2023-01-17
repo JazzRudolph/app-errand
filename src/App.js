@@ -36,25 +36,6 @@ export default function App() {
     return items.findIndex(errand => String(errand.id) === String(itemId));
   }
 
-  const moveItem = (itemId, isUp) => {
-    const newErrandsItems = [...errandsItems.errandsList];
-    const nextId = errandsItems.nextId;
-    const itemIndex = findItemIndexById(newErrandsItems, itemId);
-    const otherIndex = isUp ? itemIndex - 1 : itemIndex + 1;
-    if (itemIndex === -1 || isUp ? itemIndex <= 0 : itemIndex >= newErrandsItems.length - 1) {
-      return;
-    }
-    let swap = newErrandsItems[itemIndex];
-    newErrandsItems[itemIndex] = newErrandsItems[otherIndex];
-    newErrandsItems[otherIndex] = swap;
-
-    setErrandsItems({
-      nextId,
-      errandsList: newErrandsItems 
-    });
-
-  }
-
 
   const addItem = (newItem) => {
     setErrandsItems(oldState => {
@@ -90,7 +71,7 @@ export default function App() {
         }
         return item;
       });
-        return {
+      return {
         errandsList: newErrandsList,
         nextId
       }
@@ -98,6 +79,36 @@ export default function App() {
   }
 
 
+  const moveItem = (itemId, isUp) => {
+    const newErrandsItems = [...errandsItems.errandsList];
+    const nextId = errandsItems.nextId;
+    const itemIndex = findItemIndexById(newErrandsItems, itemId);
+    const otherIndex = isUp ? itemIndex - 1 : itemIndex + 1;
+    if (itemIndex === -1 || isUp ? itemIndex <= 0 : itemIndex >= newErrandsItems.length - 1) {
+      return;
+    }
+    let swap = newErrandsItems[itemIndex];
+    newErrandsItems[itemIndex] = newErrandsItems[otherIndex];
+    newErrandsItems[otherIndex] = swap;
+
+    setErrandsItems({
+      nextId,
+      errandsList: newErrandsItems 
+    });
+
+  }
+
+  const deleteAllCompletedItems = () => {
+    setErrandsItems(oldErrandsItems => {
+      const { errandsList, nextId } = oldErrandsItems;
+      const newErrandsList = errandsList.filter(item => !item.isCompleted);
+      return {
+        errandsList: newErrandsList,
+        nextId
+      }
+    });
+  }
+  
 
   return (
     <div className="App">
@@ -113,6 +124,7 @@ export default function App() {
           toggleItem={toggleItem}
           moveItem={moveItem}
         />
+        <button onClick={deleteAllCompletedItems}>Delete Completed Errands</button>
       </main>
     </div>
   );

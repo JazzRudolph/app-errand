@@ -75,6 +75,7 @@ export default function App() {
   }
 
 
+
   return (
     <div className="App">
       <header className="App-header">
@@ -87,6 +88,7 @@ export default function App() {
           errandsItems={errandsItems.errandsList}
           deleteItem={deleteItem}
           toggleItem={toggleItem}
+          moveItem={moveItem}
         />
       </main>
     </div>

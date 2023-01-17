@@ -4,13 +4,16 @@ import './ErrandsList.css'
 export default function ErrandsList(props) {
     const errandsItems = props.errandsItems;
 
-    const deleteButtonClicked = (event) => {
-
-        props.deleteItem(Number(event.target.dataset.id));
+    const deleteButtonClicked = (itemId) => {
+        props.deleteItem(itemId);
     }
 
-    const toggleButtonClicked = (event) => {
-        props.toggleItem(Number(event.target.dataset.id));
+    const toggleButtonClicked = (itemId) => {
+        props.toggleItem(itemId);
+    }
+
+    const moveButtonClicked = (itemId, isUp) => {
+        props.moveItem(itemId, isUp);
     }
 
     const tableRows = errandsItems.map(item =>
@@ -22,12 +25,18 @@ export default function ErrandsList(props) {
                 {item.Duration}
             </td>
             <td>
-                <button onClick={deleteButtonClicked} data-id={(item.id)}>
+                <button onClick={() => deleteButtonClicked(item.id)}>
                     Delete
                 </button>
-                <button onClick={toggleButtonClicked} data-id={(item.id)}>
+                <button onClick={() => toggleButtonClicked(item.id)}>
                     {item.isCompleted ? "Clear" : "Complete"}  
                 </button> 
+                <button onClick={() => moveButtonClicked(item.id, false)}>
+                    UP
+                </button>
+                <button onClick={() => moveButtonClicked(item.id, false)}>
+                    DOWN
+                </button>
             </td>
         </tr>
     ) 

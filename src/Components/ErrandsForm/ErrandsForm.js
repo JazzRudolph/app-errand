@@ -1,5 +1,7 @@
 import React from "react";
 import './ErrandsForm.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function ErrandsForm(props) {
     const [errorMessage, setErrorMessage] = React.useState('');
@@ -54,7 +56,8 @@ export default function ErrandsForm(props) {
                 </label>
             </div>
             <button type='submit'>
-                Add
+                <FontAwesomeIcon icon={faPlus}>
+                </FontAwesomeIcon>
             </button>
             <p className= "error-message">{errorMessage}</p>
         </form>

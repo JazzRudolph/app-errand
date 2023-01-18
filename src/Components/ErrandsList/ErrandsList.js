@@ -1,5 +1,12 @@
 import React from "react";
 import './ErrandsList.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { faSquareMinus } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function ErrandsList(props) {
     const errandsItems = props.errandsItems;
@@ -25,17 +32,17 @@ export default function ErrandsList(props) {
                 {item.Duration}
             </td>
             <td>
-                <button onClick={() => deleteButtonClicked(item.id)}>
-                    Delete
+                <button className="action-button" onClick={() => deleteButtonClicked(item.id)}>
+                    <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
                 </button>
-                <button onClick={() => toggleButtonClicked(item.id)}>
-                    {item.isCompleted ? "Clear" : "Complete"}  
+                <button className="action-button" onClick={() => toggleButtonClicked(item.id)}>
+                    {item.isCompleted ? <FontAwesomeIcon icon={faSquareMinus}></FontAwesomeIcon> : <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon>}  
                 </button> 
-                <button onClick={() => moveButtonClicked(item.id, true)}>
-                    UP
+                <button className="action-button" onClick={() => moveButtonClicked(item.id, true)}>
+                <FontAwesomeIcon icon={faArrowUp}></FontAwesomeIcon>
                 </button>
-                <button onClick={() => moveButtonClicked(item.id, false)}>
-                    DOWN
+                <button className="action-button" onClick={() => moveButtonClicked(item.id, false)}>
+                    <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>
                 </button>
             </td>
         </tr>

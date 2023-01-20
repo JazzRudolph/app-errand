@@ -113,12 +113,12 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Today Will Be Productive</h1>
+        <h1 className='header'>Today Will Be Productive</h1>
         <h4><Date /> <Time /> </h4>
       </header>
       <main className='App-main'>
         <blockquote>
-          To be productive you want to get the most out of your time, you need to be efficient and effective. Working long hours or frantically typing away at your computer for hours and hours each day.
+          To be productive you'll want to get the most out of your time, you need to be efficient and effective. Being productive isnt working long hours or frantically typing away at your computer for hours and hours each day.
         </blockquote>
         <ErrandsForm addItem={addItem} />
         <ErrandsList
@@ -127,7 +127,7 @@ export default function App() {
           toggleItem={toggleItem}
           moveItem={moveItem}
         />
-        <button onClick={deleteAllCompletedItems}>Delete Completed Errands</button>
+        <button className='deleteAll' onClick={deleteAllCompletedItems}>Delete Completed Errands</button>
       </main>
     </div>
   );

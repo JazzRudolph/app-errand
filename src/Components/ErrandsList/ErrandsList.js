@@ -25,13 +25,13 @@ export default function ErrandsList(props) {
 
     const tableRows = errandsItems.map(item =>
         <tr key={item.id}>
-            <td className={item.isCompleted ? "Complete" : ""} >
+            <td className={"limited-width " + (item.isCompleted ? "Complete" : "")} >
                 {item.NameOfErrands}
             </td>
-            <td className={item.isCompleted ? "Complete" : ""} >
+            <td className={"limited-width " + (item.isCompleted ? "Complete" : "")} >
                 {item.Duration}
             </td>
-            <td>
+            <td className="actionCollapse">
                 <button className="action-button" onClick={() => deleteButtonClicked(item.id)}>
                     <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
                 </button>
@@ -50,12 +50,18 @@ export default function ErrandsList(props) {
 
 
     return (
-        <table>
+        <table className="list">
             <thead>
                 <tr>
-                    <th>Name of errands</th>
-                    <th>Duration</th>
-                    <th>Actions</th>
+                    <th className="listHead">
+                        Name of errands
+                    </th>
+                    <th className="listHead">
+                        Duration
+                    </th>
+                    <th className="listHead">
+                        Actions
+                    </th>
                 </tr>
             </thead>
             <tbody>

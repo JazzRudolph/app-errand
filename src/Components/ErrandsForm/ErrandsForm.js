@@ -36,26 +36,30 @@ export default function ErrandsForm(props) {
 
     return (
         <form action="#" method="GET" onSubmit={handleSubmit}>
-            <div>
+            <div className="inputField">
                 <label>
                     Errand:
                     <input
+                    className="input"
                         type="text"
                         name="activity"
                         ref={errandsInput} />
                 </label>
             </div>
 
-            <div>
+            <div className="inputField">
                 <label>
                     Duration:
                     <input
+                    className="input"
                         type="text"
                         name="duration"
                         ref={durationInput} />
                 </label>
             </div>
-            <button type='submit'>
+            <button
+                className="addButton"
+                type='submit'>
                 <FontAwesomeIcon icon={faPlus}>
                 </FontAwesomeIcon>
             </button>

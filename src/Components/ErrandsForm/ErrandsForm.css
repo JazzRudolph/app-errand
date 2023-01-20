@@ -1,3 +1,42 @@
 .error-message {
-    color: rgba(205, 129, 129, 1)
+    color: rgb(141, 23, 23)
 }
+
+.inputField {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.input {
+    width: 225px;
+    height: 20px;
+    background-color: black;
+    color: yellow;
+    margin-bottom: 4px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.input:hover{
+    color: black;
+    background-color: yellow;
+
+}
+
+.addButton {
+    color: yellow;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border: 2px solid yellow;
+    text-align: center;
+}
+
+.addButton:hover {
+    color: black;
+    background-color: yellow;
+  }

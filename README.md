@@ -22,3 +22,14 @@ and lastly linking the app to other devices so you can work between cellphones/t
 
 
 ![Wireframe](https://user-images.githubusercontent.com/97210506/214181020-8bc0a00d-a207-45f3-b3d9-3ab69ef7d686.png)
+
+
+User Story
+# As a user of the Being Productive app I want to be able to orginize the errands I need to complete for the day,
+so that i can get the most out of my day and feel accomplished.
+
+## As a user of this app, I want to be able to manage my time and get the most out of my day by setting the 
+amount of time I need to spend on each errand so that way I can complete them all.
+
+### As a user of this app I want to be able to manage my errands on the list. To move them up and down the list 
+so that I can have the errands I want to complete at the top of the list and delete them as I complete them.

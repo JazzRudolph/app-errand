@@ -1,3 +1,27 @@
+# Being Productive
+Jazz Rudolph
+
+My project is a react errand app web site, the purpose of this errand’s app is to sort your daily errands into a list so that you 
+organize your day and get the most out of your day. Most adults work five days a week with only two days off to get everything 
+in their personal lives done, so with this app, you will be able to put your errands and the amount of time you want to take to 
+accomplish each errand.
+
+
+Another way to interact with this app is with the actions on the right side of each task. You will be able to delete individual 
+tasks, mark them as complete or clear them if marked complete by accident, and lastly move them up and down the list in order of
+importance or which errands you want to tackle first. 
+
+The time and date have also been included in the app, so you are able to track how much time you've spent on a task and if a task 
+can be pushed back to another date.
+
+I used HTML, CSS, JavaScript, and React. I also used Google Fonts, Font Awesome, and a very small amount of Bootstrap.
+
+Future improvements will consist of a more appealing form on my page, 
+adding additional features to my app such as setting the importance of each task and possibly color-coding them,
+and lastly linking the app to other devices so you can work between cellphones/tablets/computers.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

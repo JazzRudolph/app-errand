@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/app-errand/static/css/main.72d45958.css",
+    "main.js": "/app-errand/static/js/main.278f6fdd.js",
+    "index.html": "/app-errand/index.html",
+    "main.72d45958.css.map": "/app-errand/static/css/main.72d45958.css.map",
+    "main.278f6fdd.js.map": "/app-errand/static/js/main.278f6fdd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72d45958.css",
+    "static/js/main.278f6fdd.js"
+  ]
+}

@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ErrandsForm from './Components/ErrandsForm/ErrandsForm';
 import ErrandsList from './Components/ErrandsList/ErrandsList';
 import Time from './Components/Time/Time';
@@ -31,6 +31,14 @@ export default function App() {
     ],
     nextId: 4
   });
+
+  useEffect(() => {
+    fetch('https://hu4cqw-8080.csb.app/api/errand')
+      .then(x => x.json())
+      .then(response => {
+        setErrandsList(response);
+      });
+  }, []);
 
   function findItemIndexById(items, itemId) {
     return items.findIndex(errand => String(errand.id) === String(itemId));

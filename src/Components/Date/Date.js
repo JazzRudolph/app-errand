@@ -4,7 +4,7 @@ export default function App() {
   const date = new Date().toLocaleDateString();
 
   return (
-    <div className="">
+    <div>
       {date}
     </div>
   );

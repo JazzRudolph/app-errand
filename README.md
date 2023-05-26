@@ -1,5 +1,6 @@
 # Being Productive
 Jazz Rudolph
+https://jazzrudolph.github.io/app-errand/
 
 My project is a react errand app web site, the purpose of this errand’s app is to sort your daily errands into a list so that you 
 organize your day and get the most out of your day. Most adults work five days a week with only two days off to get everything 
@@ -33,3 +34,4 @@ amount of time I need to spend on each errand so that way I can complete them al
 
 ### As a user of this app I want to be able to manage my errands on the list. To move them up and down the list 
 so that I can have the errands I want to complete at the top of the list and delete them as I complete them.
+
